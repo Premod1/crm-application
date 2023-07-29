@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\DashboardController;
+use Illuminate\Routing\RedirectController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +25,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('admin')->group(function() {
+Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function() {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/client', [ClientController::class, 'index'])->name('client');
+    Route::get('/add-client', [ClientController::class, 'create'])->name('add-client');
 });
