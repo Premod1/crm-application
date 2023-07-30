@@ -31,4 +31,19 @@ class ClientController extends Controller
 
         return redirect()->route('client')->with('success', 'client add successfully');
     }
+    public function edit($id)
+    {
+        $client = Client::findOrFail($id);
+        return view('admin.client.edit', compact('client'));
+    }
+    public function update(Request $request, $id)
+    {
+        Client::findOrFail($id)->update($request->all());
+        return redirect()->route('client')->with('success', 'client update successfully');
+    }
+    public function delete($id)
+    {
+        Client::findOrFail($id)->delete();
+        return redirect()->route('client')->with('success', 'client delete successfully');
+    }
 }

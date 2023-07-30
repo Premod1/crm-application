@@ -31,4 +31,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function() {
     Route::get('/client', [ClientController::class, 'index'])->name('client');
     Route::get('/add-client', [ClientController::class, 'create'])->name('add-client');
     Route::post('/client/store', [ClientController::class, 'store'])->name('client.store');
+    Route::get('/client/{id}/edit', [ClientController::class, 'edit'])->name('client.edit');
+    Route::post('/client/{id}/update', [ClientController::class, 'update'])->name('client.update');
+    Route::get('/client/{id}/delete', [ClientController::class, 'delete'])->name('client.delete');
 });

@@ -19,7 +19,7 @@
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Description</th>
-                    <!-- Add other columns here as needed -->
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,6 +30,13 @@
                         <td>{{ $clientData->email }}</td>
                         <td>{{ $clientData->phone }}</td>
                         <td>{{ $clientData->description }}</td>
+                        <td>
+                            <div>
+                                <a href="{{ route('client.edit', $clientData->id) }}" class="btn btn-primary"> Edit</a>
+                                <a href="{{ route('client.delete', $clientData->id) }}" class="btn btn-danger"> Delete</a>
+                            </div>
+
+                        </td>
                         <!-- Add other columns here as needed -->
                     </tr>
                 @endforeach
