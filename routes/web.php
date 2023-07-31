@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProjectController;
 use Illuminate\Routing\RedirectController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -34,4 +35,8 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function() {
     Route::get('/client/{id}/edit', [ClientController::class, 'edit'])->name('client.edit');
     Route::post('/client/{id}/update', [ClientController::class, 'update'])->name('client.update');
     Route::get('/client/{id}/delete', [ClientController::class, 'delete'])->name('client.delete');
+
+    Route::get('/project', [ProjectController::class, 'index'])->name('project');
+    Route::get('/add-project', [ProjectController::class, 'create'])->name('add-project');
+    Route::post('/project/store', [ProjectController::class, 'store'])->name('project.store');
 });

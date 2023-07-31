@@ -41,8 +41,8 @@
                 </a>
                 <div class="collapse" id="collapseProject" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ url('admin/client') }}">View Project</a>
-                        <a class="nav-link" href="{{ url('admin/add-client') }}">Add Project</a>
+                        <a class="nav-link" href="{{ url('admin/project') }}">View Project</a>
+                        <a class="nav-link" href="{{ url('admin/add-project') }}">Add Project</a>
                     </nav>
                 </div>
 
