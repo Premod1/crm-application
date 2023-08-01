@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Routing\RedirectController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -39,4 +41,8 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function() {
     Route::get('/project', [ProjectController::class, 'index'])->name('project');
     Route::get('/add-project', [ProjectController::class, 'create'])->name('add-project');
     Route::post('/project/store', [ProjectController::class, 'store'])->name('project.store');
+
+    Route::get('/user', [UserController::class, 'index'])->name('user');
+    // Route::get('/add-user', [UserController::class, 'create'])->name('add-user');
+    // Route::post('/user/store', [UserController::class,'store'])->name('user.store');
 });
