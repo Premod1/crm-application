@@ -10,7 +10,7 @@
         <li class="breadcrumb-item active"> Create Project</li>
     </ol>
     <div class="row">
-        <form action="{{ route('project.store') }}" method="POST">
+        <form action="{{ route('project.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">

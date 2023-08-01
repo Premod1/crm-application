@@ -19,6 +19,7 @@
                     <th>Assign User</th>
                     <th>Assign Client</th>
                     <th>Deadline</th>
+                    <th>File</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -31,6 +32,13 @@
                         <td>{{ $projectData->Assign_user }}</td>
                         <td>{{ $projectData->Assign_client }}</td>
                         <td>{{ $projectData->deadline }}</td>
+                        <td>
+                            @if($projectData->file_path)
+                            <a href="{{ asset('files/' . $projectData->file_path) }}" download>Download File</a>
+                        @else
+                            No file uploaded
+                        @endif
+                        </td>
 
                         <td>
                             <div>
