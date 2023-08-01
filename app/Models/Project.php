@@ -20,13 +20,13 @@ class Project extends Model
         'file_path'
     ];
 
-    public function client()
-    {
-        return $this->belongsTo(Client::class, 'Assign_client', 'id');
-    }
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'Assign_user', 'id');
-    }
+    // public function client()
+    // {
+    //     return $this->belongsTo(Client::class, 'Assign_client', 'id');
+    // }
+    // public function user()
+    // {
+    //     return $this->belongsTo(User::class, 'Assign_user', 'user_id');
+    // }
 
 }

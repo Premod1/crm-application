@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('project_name');
             $table->text('project_description');
-            $table->integer('Assign_user');
-            $table->integer('Assign_client');
+            $table->string('Assign_user');
+            $table->string('Assign_client');
             $table->date('deadline')->nullable();
             $table->string('file_path')->default('')->nullable();
             $table->timestamps();

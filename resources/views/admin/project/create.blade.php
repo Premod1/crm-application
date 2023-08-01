@@ -25,7 +25,7 @@
                 <select class="form-select" name="Assign_user" aria-label="Default select example">
                     <option selected>Assign User</option>
                     @foreach ($users as $user)
-                        <option value="{{ $user->id }}">{{ $user->name }}</option>
+                        <option value="{{ $user->name }}">{{ $user->name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -33,7 +33,7 @@
                 <select class="form-select" name="Assign_client" aria-label="Default select example">
                     <option selected>Assign Client</option>
                     @foreach ($clients as $client)
-                        <option value="{{ $client->id }}">{{ $client->name }}</option>
+                        <option value="{{ $client->name }}">{{ $client->name }}</option>
                     @endforeach
                 </select>
             </div>

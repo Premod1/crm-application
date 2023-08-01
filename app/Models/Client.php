@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use Database\Factories\ClientFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class Client extends Model
 {
@@ -19,6 +21,10 @@ class Client extends Model
 
     public function project()
     {
-        return $this->hasMany(Project::class, 'Assign_client', 'id');
+        // return $this->hasMany(Project::class, 'Assign_client', 'id');
+    }
+    protected static function newFactory(): Factory
+    {
+        return ClientFactory::new();
     }
 }
