@@ -25,15 +25,6 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
 
-        // $request->validate([
-        //     'project_name' => 'required|string|max:255',
-        //     'project_description' => 'required|string',
-        //     'Assign_user' => 'required|exists:users,id',
-        //     'Assign_client' => 'required|exists:clients,id',
-        //     'deadline' => 'required|date',
-        //     'file_path' => 'file|mimes:pdf,doc,docx|max:2048', // Example: Allow only PDF, DOC, DOCX files up to 2MB.
-        // ]);
-
         $project = new Project();
         $project->project_name = $request->input('project_name');
         $project->project_description = $request->input('project_description');
@@ -51,7 +42,7 @@ class ProjectController extends Controller
         $project->save();
 
         // Redirect to the project index page or show a success message
-        return redirect()->route('project.index')->with('success', 'Project created successfully.');
+        return redirect()->route('project')->with('success', 'project add successfully');
 
     }
 }

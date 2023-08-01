@@ -10,7 +10,40 @@
         <li class="breadcrumb-item active"> View Project</li>
     </ol>
     <div class="row">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Project Name</th>
+                    <th>Project Description</th>
+                    <th>Assign User</th>
+                    <th>Assign Client</th>
+                    <th>Deadline</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($projects as $projectData)
+                    <tr>
+                        <td>{{ $projectData->id }}</td>
+                        <td>{{ $projectData->project_name }}</td>
+                        <td>{{ $projectData->project_description }}</td>
+                        <td>{{ $projectData->Assign_user }}</td>
+                        <td>{{ $projectData->Assign_client }}</td>
+                        <td>{{ $projectData->deadline }}</td>
 
+                        <td>
+                            <div>
+                                <a href="{{ route('client.edit', $projectData->id) }}" class="btn btn-primary"> Edit</a>
+                                <a href="{{ route('client.delete', $projectData->id) }}" class="btn btn-danger"> Delete</a>
+                            </div>
+
+                        </td>
+                        <!-- Add other columns here as needed -->
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </div>
 @endsection

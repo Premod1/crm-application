@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('Assign_user');
             $table->integer('Assign_client');
             $table->date('deadline')->nullable();
-            $table->string('file_path');
+            $table->string('file_path')->default('')->nullable();
             $table->timestamps();
         });
     }

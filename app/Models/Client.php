@@ -16,4 +16,9 @@ class Client extends Model
         'phone',
         'description'
     ];
+
+    public function project()
+    {
+        return $this->hasMany(Project::class, 'Assign_client', 'id');
+    }
 }
