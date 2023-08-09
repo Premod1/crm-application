@@ -31,26 +31,17 @@ class ProjectController extends Controller
         $project->Assign_user = $request->input('Assign_user');
         $project->Assign_client = $request->input('Assign_client');
         $project->deadline = $request->input('deadline');
+        $project->user_id = $request->input('Assign_user');
+        $project->client_id = $request->input('Assign_client');
+
 
         if ($request->hasFile('file_path')) {
             $file = $request->file('file_path');
-
-            // Generate a unique filename to prevent overwriting existing files
             $filename = time() . '.' . $file->extension();
-
-            // Move the uploaded file to the 'public/files' directory
             $file->move(public_path('files'), $filename);
-
-            // Store the file path in the database
             $project->file_path = $filename;
         }
 
-        // Handle file upload if a file is provided
-        // if ($request->hasFile('file_path')) {
-        //     $file = $request->file('file_path');
-        //     $filePath = $file->store('project_files');
-        //     $project->file_path = $filePath;
-        // }
 
         $project->save();
 

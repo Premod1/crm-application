@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+use Illuminate\Database\Eloquent\Model;
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -43,8 +45,5 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    // public function project()
-    // {
-    //     return $this->hasMany(Project::class, 'Assign_user', 'project_id');
-    // }
+
 }

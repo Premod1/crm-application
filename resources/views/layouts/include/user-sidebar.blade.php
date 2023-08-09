@@ -4,22 +4,15 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">User Panel</div>
-                <a class="nav-link" href="{{ url('users/dashboard') }}">
+                <a class="nav-link" href="{{ url('/home') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Projects
                 </a>
 
 
-                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseProject" aria-expanded="false" aria-controls="collapseLayouts">
-                    <div class="sb-nav-link-icon"><i class="fa fa-briefcase"></i></div>
-                    Project
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                </a>
+
                 <div class="collapse" id="collapseProject" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ url('users/project') }}">View Project</a>
-                        <a class="nav-link" href="{{ url('admin/add-project') }}">Add Project</a>
-                    </nav>
+
                 </div>
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $project = Project::all();
+        $loggedInUserEmail = Auth::user()->email;
+
+        $project = Project::whereHas('assignedUser', function ($query) use ($loggedInUserEmail) {
+            $query->where('email', $loggedInUserEmail);
+        })->get();
+
+
+        // $project = Project::all();
         return view('users.dashboard', compact('project'));
+    }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/login');
+
     }
 }

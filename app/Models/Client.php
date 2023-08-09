@@ -19,12 +19,11 @@ class Client extends Model
         'description'
     ];
 
-    public function project()
-    {
-        // return $this->hasMany(Project::class, 'Assign_client', 'id');
-    }
+
     protected static function newFactory(): Factory
     {
         return ClientFactory::new();
     }
+
+
 }

@@ -29,8 +29,18 @@
                         <td>{{ $projectData->id }}</td>
                         <td>{{ $projectData->project_name }}</td>
                         <td>{{ $projectData->project_description }}</td>
-                        <td>{{ $projectData->Assign_user }}</td>
-                        <td>{{ $projectData->Assign_client }}</td>
+                        <td> @if ($projectData->assignedUser)
+                            {{ $projectData->assignedUser->name }}
+                        @else
+                            No Assigned User
+                        @endif</td>
+
+                        <td> @if ($projectData->assignedClient)
+                            {{ $projectData->assignedClient->name }}
+                        @else
+                            No Assigned Client
+                        @endif </td>
+
                         <td>{{ $projectData->deadline }}</td>
                         <td>
                             @if($projectData->file_path)

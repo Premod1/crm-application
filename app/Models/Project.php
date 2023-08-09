@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
-
 class Project extends Model
 {
     use HasFactory;
@@ -15,18 +14,22 @@ class Project extends Model
         'project_name',
         'project_description',
         'Assign_user',
-        'Assign_client'.
+        'Assign_client',
         'deadline',
         'file_path'
     ];
 
-    // public function client()
-    // {
-    //     return $this->belongsTo(Client::class, 'Assign_client', 'id');
-    // }
-    // public function user()
-    // {
-    //     return $this->belongsTo(User::class, 'Assign_user', 'user_id');
-    // }
+    public function assignedUser()
+    {
+        return $this->belongsTo(User::class, 'Assign_user'); // Adjust the foreign key column if needed
+    }
+
+    public function assignedClient()
+    {
+        return $this->belongsTo(Client::class, 'Assign_client'); // Adjust the foreign key column if needed
+    }
+
+
+
 
 }

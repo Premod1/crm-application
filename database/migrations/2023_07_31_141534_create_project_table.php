@@ -20,6 +20,8 @@ return new class extends Migration
             $table->date('deadline')->nullable();
             $table->string('file_path')->default('')->nullable();
             $table->timestamps();
+
+
         });
     }
 
