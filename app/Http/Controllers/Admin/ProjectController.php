@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ProjectAssigned;
 use App\Models\Client;
 use App\Models\Project;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
@@ -33,6 +35,9 @@ class ProjectController extends Controller
         $project->deadline = $request->input('deadline');
         $project->user_id = $request->input('Assign_user');
         $project->client_id = $request->input('Assign_client');
+
+        // $assignedUser = User::findOrFail($request->input('Assign_user'));
+        // Mail::to($assignedUser->email)->send(new ProjectAssigned($project));
 
 
         if ($request->hasFile('file_path')) {
