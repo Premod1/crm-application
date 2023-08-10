@@ -52,8 +52,8 @@
 
                         <td>
                             <div>
-                                <a href="{{ route('client.edit', $projectData->id) }}" class="btn btn-primary"> Edit</a>
-                                <a href="{{ route('client.delete', $projectData->id) }}" class="btn btn-danger"> Delete</a>
+                                <a href="{{ route('project.edit', $projectData->id) }}" class="btn btn-primary"> Edit</a>
+                                <a href="{{ route('project.delete', $projectData->id) }}" class="btn btn-danger"> Delete</a>
                             </div>
 
                         </td>

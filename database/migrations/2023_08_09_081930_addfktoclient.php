@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('project', function (Blueprint $table) {
             $table->unsignedBigInteger('client_id');
 
-            $table->foreign('client_id')->references('id')->on('client');
+            $table->foreign('client_id')->references('id')->on('client')->onDelete('cascade');
         });
     }
 

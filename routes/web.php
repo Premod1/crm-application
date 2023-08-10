@@ -44,6 +44,9 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function() {
     Route::get('/project', [ProjectController::class, 'index'])->name('project');
     Route::get('/add-project', [ProjectController::class, 'create'])->name('add-project');
     Route::post('/project/store', [ProjectController::class, 'store'])->name('project.store');
+    Route::get('/project/{id}/delete', [ProjectController::class, 'delete'])->name('project.delete');
+    Route::get('/project/{id}/edit', [ProjectController::class, 'edit'])->name('project.edit');
+    Route::post('/project/{id}/update', [ProjectController::class, 'update'])->name('project.update');
 
     Route::get('/user', [UserController::class, 'index'])->name('user');
     // Route::get('/add-user', [UserController::class, 'create'])->name('add-user');

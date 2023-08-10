@@ -54,4 +54,16 @@ class ProjectController extends Controller
         return redirect()->route('project')->with('success', 'project add successfully');
 
     }
+    public function edit($id)
+    {
+        $users = User::all();
+        $clients = Client::all();
+        $project = Project::findOrFail($id);
+        return view('admin.project.edit', compact('project', 'users', 'clients'));
+    }
+    public function delete($id)
+    {
+        Project::findOrFail($id)->delete();
+        return redirect()->route('project')->with('success', 'project delete successfully');
+    }
 }
