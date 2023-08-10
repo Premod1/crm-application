@@ -55,7 +55,7 @@
                 <input class="form-control" name="file_path" type="file" id="formFile">
                 @if ($project->file_path)
                     <p>Current File: {{ $project->file_path }}</p>
-                    <button type="button" class="btn btn-danger" onclick="removeFile()">Remove File</button>
+
                 @else
                     <p>No file uploaded.</p>
                 @endif
@@ -71,12 +71,6 @@
 </div>
 @endsection
 
-<script>
-    function removeFile() {
-        // Clear the file input and hide the remove button
-        document.getElementById('formFile').value = '';
-        document.querySelector('.btn-danger').style.display = 'none';
-    }
-</script>
+
 
 
