@@ -11,7 +11,7 @@
         <li class="breadcrumb-item active">Client</li>
     </ol>
     <div class="row">
-        <table>
+        <table class="table border" id="mytable">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -37,13 +37,13 @@
                             </div>
 
                         </td>
-                        <!-- Add other columns here as needed -->
+
                     </tr>
                 @endforeach
             </tbody>
         </table>
 
-            {{ $client->links('pagination::bootstrap-4') }}
+
 
 
     </div>
