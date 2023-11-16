@@ -15,7 +15,7 @@ class ExampleTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
-                    ->assertSee('Laravel');
+                    ->assertSee('Custom Relationship Management For Managin Client');
         });
     }
 }
